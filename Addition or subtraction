@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+// Function declarations
+int add(int a, int b);
+int sub(int a, int b);
+
+int main() {
+    int choice;
+    int num1, num2;
+
+    do {
+        // Menu display
+        printf("\n===== Simple Calculator =====\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        // Input numbers only if choice is 1 or 2
+        if(choice == 1 || choice == 2) {
+            printf("Enter first number: ");
+            scanf("%d", &num1);
+            printf("Enter second number: ");
+            scanf("%d", &num2);
+        }
+
+        // Switch case to perform operation
+        switch(choice) {
+            case 1:
+                printf("Addition Result: %d\n", add(num1, num2));
+                break;
+            case 2:
+                printf("Subtraction Result: %d\n", sub(num1, num2));
+                break;
+            case 3:
+                printf("Exiting program...\n");
+                break;
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
+
+    } while(choice != 3);
+
+    return 0;
+}
+
+// Function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function to subtract two numbers
+int sub(int a, int b) {
+    return a - b;
+}
